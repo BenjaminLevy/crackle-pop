@@ -1,7 +1,10 @@
 const { execSync } = require('node:child_process');
 
 
-const res = execSync('node crackle-pop.js').toString().trim("\n").split("\n")
+const res = execSync('node crackle-pop.js')
+  .toString()
+  .trim("\n")
+  .split("\n")
 
 let counts = {
   Crackle: 0,
@@ -16,9 +19,6 @@ for(let i = 0; i < res.length; i++){
   if(word in counts) counts[word] += 1
   else if(word.match(/^\d+$/)) counts.integer += 1
   else console.log(word)
-  // else if(res[i] === "Pop") counts.pop += 1
-  // else if(res[i] === "CracklePop") counts. += 1
-
 }
 
 class testItem {
@@ -45,9 +45,11 @@ const test = (name, expected, got) => {
     ? "PASS"
     : "FAIL"
 
-  console.log(`${passOrFail} -- ${name}: 
+  console.log(
+  `${passOrFail} -- ${name}: 
     expected "${expected}", 
-    got "${got}"`)
+    got "${got}"`
+  )
 }
 
 for(let i = 0; i < testsArr.length; i++){
