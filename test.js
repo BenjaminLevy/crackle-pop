@@ -18,7 +18,7 @@ for(let i = 0; i < res.length; i++){
   let word = res[i]
   if(word in counts) counts[word] += 1
   else if(word.match(/^\d+$/)) counts.integer += 1
-  else console.log(word)
+  else counts.other += 1
 }
 
 class testItem {
